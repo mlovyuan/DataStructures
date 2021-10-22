@@ -42,5 +42,41 @@ namespace Array
 
         public int Count => N;
         public bool IsEmpty => N == 0;
+
+        public void Add(int index, T inputElement)
+        {
+            if (index < 0 || index > N)
+            {
+                throw new ArgumentException("非法的索引值");
+            }
+
+            if (index == 0)
+            {
+                //var headNode = new Node(inputElement);
+                //headNode.next = head;
+                //head = headNode;
+
+                head = new Node(inputElement, head);
+            }
+            else
+            {
+                var preNode = head;
+                for (int i = 0; i < index - 1; i++)
+                    preNode = preNode.next;
+
+                preNode.next = new Node(inputElement, preNode.next);
+            }
+            N++;
+        }
+
+        public void AddFirst(T inputElement)
+        {
+            Add(0, inputElement);
+        }
+
+        public void AddLast(T inputElement)
+        {
+            Add(N, inputElement);
+        }
     }
 }
