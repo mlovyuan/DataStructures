@@ -3,18 +3,18 @@ using System.Text;
 
 namespace Array
 {
-    public class ArraySample
+    public class ArrayGenericSample<T>
     {
-        private int[] _data;
+        private T[] _data;
         private int _n;
 
-        public ArraySample(int capacity)
+        public ArrayGenericSample(int capacity)
         {
-            _data = new int[capacity];
+            _data = new T[capacity];
             _n = 0;
         }
 
-        public ArraySample() : this(10)
+        public ArrayGenericSample() : this(10)
         {
         }
 
@@ -22,7 +22,7 @@ namespace Array
         public int Count => _n;
         public bool IsEmpty => _n == 0;
 
-        public void Add(int index, int element)
+        public void Add(int index, T element)
         {
             if (index < 0 || index > _n)
             {
@@ -46,21 +46,21 @@ namespace Array
             _n++;
         }
 
-        public void AddLast(int element)
+        public void AddLast(T element)
         {
             Add(_n, element);
         }
 
-        public void AddFirst(int element)
+        public void AddFirst(T element)
         {
             Add(0, element);
         }
 
-        public bool Contains(int element)
+        public bool Contains(T element)
         {
             for (var i = 0; i < _n; i++)
             {
-                if (element == _data[i])
+                if (element.Equals(_data[i]))
                 {
                     return true;
                 }
@@ -73,7 +73,7 @@ namespace Array
         {
             for (var i = 0; i < _n; i++)
             {
-                if (element == _data[i])
+                if (element.Equals(_data[i]))
                 {
                     return i;
                 }
@@ -94,9 +94,9 @@ namespace Array
                 _data[i] = _data[index + 1];
             }
 
-            _data[_n] = default(int);
+            _data[_n] = default(T);
             _n--;
-            
+
             // dynamic array 縮容
             if (_n == _data.Length / 4)
             {
@@ -133,7 +133,7 @@ namespace Array
 
         private void ResetCapcity(int newCapacity)
         {
-            int[] newDate = new int[newCapacity];
+            T[] newDate = new T[newCapacity];
             for (var i = 0; i < _n; i++)
             {
                 newDate[i] = _data[i];
