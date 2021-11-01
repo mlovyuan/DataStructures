@@ -19,3 +19,11 @@ expanded or shrunk.
 * Making the most of memory, and capacity is equal length.
 * Here what I practice was singly linked list, but there also have doubly linked list in the real world.
 * In C#，`LinkedList` represents singly linked list,  `LinkedListNode` represents doubly linked list.
+* There is no index concept, because it doesn't continuesly create memory space.
+---
+### Time complexity
+* It describes the time that computer takes to run an algorithm.
+* Big O
+  * Expressed the relationship between the time an algorithm takes and data scale.
+  * Constant time as O(1), simply statements and there's no loop.
+  * Linear time as O(n), simply statements within loop.
