@@ -27,3 +27,7 @@ expanded or shrunk.
   * Expressed the relationship between the time an algorithm takes and data scale.
   * Constant time as O(1), simply statements and there's no loop.
   * Linear time as O(n), simply statements within loop.
+---
+### Stack & Queue
+* Feature of stack: Last in first out.
+* Feature of queue: First in first out. 
