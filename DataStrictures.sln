@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array", "Array\Array.csproj", "{7BE94211-9842-4834-A9CE-44DAF5D70B0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackAndQueue", "StackAndQueue\StackAndQueue.csproj", "{821E977F-218B-4B2E-B0C3-BD28EC5BE2F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{7BE94211-9842-4834-A9CE-44DAF5D70B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BE94211-9842-4834-A9CE-44DAF5D70B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BE94211-9842-4834-A9CE-44DAF5D70B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{821E977F-218B-4B2E-B0C3-BD28EC5BE2F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821E977F-218B-4B2E-B0C3-BD28EC5BE2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821E977F-218B-4B2E-B0C3-BD28EC5BE2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821E977F-218B-4B2E-B0C3-BD28EC5BE2F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
