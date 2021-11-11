@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Array
 {
-    class LinkedListSample<T>
+    public class LinkedListSample<T>
     {
         private class Node
         {
