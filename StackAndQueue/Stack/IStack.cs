@@ -4,7 +4,7 @@
     {
         int Count { get; }
         bool IsEmpty { get; }
-        void Push();
+        void Push(T element);
         T Pop();
         T Peek();
     }

@@ -1,22 +1,42 @@
-﻿namespace StackAndQueue.Stack
+﻿using Array;
+
+namespace StackAndQueue.Stack
 {
-    class ArrayGenericStack<T>:IStack<T>
+    class ArrayGenericStack<T> : IStack<T>
     {
-        public int Count { get; }
-        public bool IsEmpty { get; }
-        public void Push()
+        private ArrayGenericSample<T> arrayGeneric;
+
+        public ArrayGenericStack(int capacity)
         {
-            throw new System.NotImplementedException();
+            arrayGeneric = new ArrayGenericSample<T>(capacity);
+        }
+
+        public ArrayGenericStack()
+        {
+            arrayGeneric = new ArrayGenericSample<T>();
+        }
+
+        public int Count => arrayGeneric.Count;
+        public bool IsEmpty => arrayGeneric.IsEmpty;
+
+        public void Push(T element)
+        {
+            arrayGeneric.AddLast(element);
         }
 
         public T Pop()
         {
-            throw new System.NotImplementedException();
+            return arrayGeneric.RemoveLast();
         }
 
         public T Peek()
         {
-            throw new System.NotImplementedException();
+            return arrayGeneric.GetLast();
+        }
+
+        public override string ToString()
+        {
+            return $"Stack: {arrayGeneric.ToString()} top";
         }
     }
 }

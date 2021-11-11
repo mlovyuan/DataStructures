@@ -69,6 +69,26 @@ namespace Array
             return false;
         }
 
+        public T Get(int index)
+        {
+            if (index < 0 || index > _n)
+            {
+                throw new ArgumentException("index越界");
+            }
+
+            return _data[index];
+        }
+
+        public T GetFirst()
+        {
+            return Get(0);
+        }
+
+        public T GetLast()
+        {
+            return Get(_n - 1);
+        }
+
         public int IndexOf(int element)
         {
             for (var i = 0; i < _n; i++)
@@ -82,13 +102,14 @@ namespace Array
             return -1;
         }
 
-        public void RemoveAt(int index)
+        public T RemoveAt(int index)
         {
             if (index < 0 || index > _n)
             {
                 throw new ArgumentException("index越界");
             }
 
+            T deleteItem = _data[index];
             for (int i = index; i < _n; i++)
             {
                 _data[i] = _data[index + 1];
@@ -102,16 +123,18 @@ namespace Array
             {
                 ResetCapcity(_data.Length / 2);
             }
+
+            return deleteItem;
         }
 
-        public void RemoveFirst()
+        public T RemoveFirst()
         {
-            RemoveAt(0);
+            return RemoveAt(0);
         }
 
-        public void RemoveLast()
+        public T RemoveLast()
         {
-            RemoveAt(_n - 1);
+            return RemoveAt(_n - 1);
         }
 
         public override string ToString()
