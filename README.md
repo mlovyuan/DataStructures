@@ -7,6 +7,8 @@ expanded or shrunk.
 ### Boxing & UnBoxing
 * Value Type: Most of them are inherited from struct, includes enum though it belongs to class.
 * Reference Type: Most of them are inherited from class, includes interface.
+
+![Test image](https://i.ibb.co/jwwR72F/test.png "Test image")
 ---
 ### ArrayGeneric
 * **==** & **.equals()**
@@ -30,4 +32,7 @@ expanded or shrunk.
 ---
 ### Stack & Queue
 * Feature of stack: Last in first out.
+
+![Test image of Stack](https://i.ibb.co/7bKhz1r/test.png")
+
 * Feature of queue: First in first out. 
