@@ -42,7 +42,7 @@ namespace Array
 
         public void Add(int index, T inputElement)
         {
-            if (index < 0 || index >= N)
+            if (index < 0 || index > N)
             {
                 throw new ArgumentException("非法的索引值");
             }

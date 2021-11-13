@@ -110,13 +110,13 @@ namespace Array
             }
 
             T deleteItem = _data[index];
-            for (int i = index; i < _n; i++)
+            for (int i = index + 1; i < _n - 1; i++)
             {
-                _data[i] = _data[index + 1];
+                _data[i - 1] = _data[index];
             }
 
-            _data[_n] = default(T);
             _n--;
+            _data[_n] = default(T);
 
             // dynamic array 縮容
             if (_n == _data.Length / 4)

@@ -26,6 +26,8 @@ namespace Array
         private static void Show_Boxing_UnBoxing()
         {
             int times = 10000000;
+            
+            Console.WriteLine($"Test times: {times:N0}");
 
             Stopwatch stopwatch = new Stopwatch();
 
