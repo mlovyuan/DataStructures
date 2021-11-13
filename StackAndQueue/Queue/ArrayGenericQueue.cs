@@ -6,26 +6,36 @@ namespace StackAndQueue.Queue
     {
         private ArrayGenericSample<T> arrayGeneric;
 
+        public ArrayGenericQueue(int Capacity)
+        {
+            arrayGeneric = new ArrayGenericSample<T>(Capacity);
+        }
+        
         public ArrayGenericQueue()
         {
             arrayGeneric = new ArrayGenericSample<T>();
         }
 
-        public int Count { get; }
-        public bool IsEmpty { get; }
+        public int Count => arrayGeneric.Count;
+        public bool IsEmpty => arrayGeneric.IsEmpty;
         public void Enqueue(T element)
         {
-            throw new System.NotImplementedException();
+            arrayGeneric.AddLast(element);
         }
 
         public T Dequeue()
         {
-            throw new System.NotImplementedException();
+            return arrayGeneric.RemoveFirst();
         }
 
         public T Peek()
         {
-            throw new System.NotImplementedException();
+            return arrayGeneric.GetFirst();
+        }
+
+        public override string ToString()
+        {
+            return $"Queue: front {arrayGeneric} tail";
         }
     }
 }
