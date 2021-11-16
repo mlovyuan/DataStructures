@@ -32,7 +32,11 @@ expanded or shrunk.
 ---
 ### Stack & Queue
 * Feature of stack: Last in first out.
+  * ArrayStack: Push an element at last, pop an element at last.
+  * LinkedListStack: Push an element at first, pop an element at first.
 
 ![Test image of Stack](https://i.ibb.co/7bKhz1r/test.png")
 
 * Feature of queue: First in first out. 
+  * Enqueue an element at last, dequeue an element at first.
+  * Circular Queue:
