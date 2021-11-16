@@ -20,7 +20,7 @@ expanded or shrunk.
 ### LinkedList
 * Making the most of memory, and capacity is equal length.
 * Here what I practice was singly linked list, but there also have doubly linked list in the real world.
-* In C#，`LinkedList` represents singly linked list,  `LinkedListNode` represents doubly linked list.
+* In C#, `LinkedList` represents singly linked list,  `LinkedListNode` represents doubly linked list.
 * There is no index concept, because it doesn't continuesly create memory space.
 ---
 ### Time complexity
@@ -34,7 +34,8 @@ expanded or shrunk.
 * Feature of stack: Last in first out.
   * ArrayStack: Push an element at last, pop an element at last.
   * LinkedListStack: Push an element at first, pop an element at first.
-
+  * In C#, there is `Stack<T>` type can use.
+ 
 ![Test image of Stack](https://i.ibb.co/7bKhz1r/test.png")
 
 * Feature of queue: First in first out. 
