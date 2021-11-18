@@ -40,4 +40,7 @@ expanded or shrunk.
 
 * Feature of queue: First in first out. 
   * Enqueue an element at last, dequeue an element at first.
-  * Circular Queue:
+  * Circular Queue: There are two pointers record Front and Tail location in the Queue.  When it implements dequeue, the Front pointer will move to the next location and there are some empty spaces will show.  After dequeue, if the queue enqueue, the Tail pointer move to the first location which is empty space now.  Time complexity from O(n) of regular queu declines to O(1)
+  * In C#, there is `Queue<T>` type can use.
+  
+![Test image of Stack](https://i.ibb.co/B49qTpL/Untitled.png")
