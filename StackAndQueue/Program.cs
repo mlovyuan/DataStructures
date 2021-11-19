@@ -37,6 +37,13 @@ namespace StackAndQueue
                 cSharpQueueTest.Dequeue();
             stopwatch.Stop();
             Console.WriteLine($"cSharpQueueTest's time: {stopwatch.ElapsedMilliseconds}ms");
+
+
+            long linkedListQueueTest = TestStack(new LinkedListGenericQueue<int>(), testTimes);
+            Console.WriteLine($"ArrayQueue's time: {linkedListQueueTest}ms");
+
+            long linkedListCircularQueueTest = TestStack(new LinkedListGenericCircularQueue<int>(), testTimes);
+            Console.WriteLine($"LinkedListCircularQueueTest's time: {linkedListCircularQueueTest}ms");
             Console.ReadLine();
         }
 
