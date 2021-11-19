@@ -4,39 +4,39 @@ namespace StackAndQueue.Stack
 {
     class ArrayGenericStack<T> : IStack<T>
     {
-        private ArrayGenericSample<T> arrayGeneric;
+        private ArrayGenericSample<T> _arrayGeneric;
 
         public ArrayGenericStack(int capacity)
         {
-            arrayGeneric = new ArrayGenericSample<T>(capacity);
+            _arrayGeneric = new ArrayGenericSample<T>(capacity);
         }
 
         public ArrayGenericStack()
         {
-            arrayGeneric = new ArrayGenericSample<T>();
+            _arrayGeneric = new ArrayGenericSample<T>();
         }
 
-        public int Count => arrayGeneric.Count;
-        public bool IsEmpty => arrayGeneric.IsEmpty;
+        public int Count => _arrayGeneric.Count;
+        public bool IsEmpty => _arrayGeneric.IsEmpty;
 
         public void Push(T element)
         {
-            arrayGeneric.AddLast(element);
+            _arrayGeneric.AddLast(element);
         }
 
         public T Pop()
         {
-            return arrayGeneric.RemoveLast();
+            return _arrayGeneric.RemoveLast();
         }
 
         public T Peek()
         {
-            return arrayGeneric.GetLast();
+            return _arrayGeneric.GetLast();
         }
 
         public override string ToString()
         {
-            return $"Stack: {arrayGeneric.ToString()} top";
+            return $"Stack: {_arrayGeneric.ToString()} top";
         }
     }
 }

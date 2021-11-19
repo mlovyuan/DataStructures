@@ -7,33 +7,33 @@ namespace Array
     {
         private class Node
         {
-            public T element;
-            public Node next;
+            public T _element;
+            public Node _next;
 
             public Node(T element, Node next)
             {
-                this.element = element;
-                this.next = next;
+                _element = element;
+                _next = next;
             }
 
             public Node(T element)
             {
-                this.element = element;
-                this.next = null;
+                _element = element;
+                _next = null;
             }
 
             public override string ToString()
             {
-                return element.ToString();
+                return _element.ToString();
             }
         }
 
-        private Node head;
+        private Node _head;
         private int N;
 
         public LinkedListSample()
         {
-            head = null;
+            _head = null;
             N = 0;
         }
 
@@ -53,15 +53,15 @@ namespace Array
                 //headNode.next = head;
                 //head = headNode;
 
-                head = new Node(inputElement, head);
+                _head = new Node(inputElement, _head);
             }
             else
             {
-                var preNode = head;
+                var preNode = _head;
                 for (int i = 0; i < index - 1; i++)
-                    preNode = preNode.next;
+                    preNode = preNode._next;
 
-                preNode.next = new Node(inputElement, preNode.next);
+                preNode._next = new Node(inputElement, preNode._next);
             }
             N++;
         }
@@ -83,11 +83,11 @@ namespace Array
                 throw new ArgumentException("非法的索引值");
             }
 
-            Node currentNode = head;
+            Node currentNode = _head;
             for (int i = 0; i < index; i++)
-                currentNode = currentNode.next;
+                currentNode = currentNode._next;
 
-            return currentNode.element;
+            return currentNode._element;
         }
 
         public T GetFirst()
@@ -107,21 +107,21 @@ namespace Array
                 throw new ArgumentException("非法的索引值");
             }
 
-            Node currentNode = head;
+            Node currentNode = _head;
             for (int i = 0; i < index; i++)
-                currentNode = currentNode.next;
+                currentNode = currentNode._next;
 
-            currentNode.element = newElement;
+            currentNode._element = newElement;
         }
 
         public bool Contains(T element)
         {
-            Node currentNode = head;
+            Node currentNode = _head;
             while (currentNode != null)
             {
-                if (currentNode.element.Equals(element))
+                if (currentNode._element.Equals(element))
                     return true;
-                currentNode = currentNode.next;
+                currentNode = currentNode._next;
             }
             return false;
         }
@@ -136,19 +136,19 @@ namespace Array
             Node deleteNode;
             if (index == 0)
             {
-                deleteNode = head;
-                head = head.next;
+                deleteNode = _head;
+                _head = _head._next;
             }
             else
             {
-                Node previousNode = head;
+                Node previousNode = _head;
                 for (int i = 0; i < index - 1; i++)
-                    previousNode = previousNode.next;
-                deleteNode = previousNode.next;
-                previousNode.next = deleteNode.next;
+                    previousNode = previousNode._next;
+                deleteNode = previousNode._next;
+                previousNode._next = deleteNode._next;
             }
             N--;
-            return deleteNode.element;
+            return deleteNode._element;
         }
 
         public T RemoveFirst()
@@ -163,27 +163,27 @@ namespace Array
 
         public void Remove(T element)
         {
-            if (head == null)
+            if (_head == null)
                 return;
-            if (head.element.Equals(element))
+            if (_head._element.Equals(element))
             {
-                head = head.next;
+                _head = _head._next;
                 N--;
             }
             else
             {
-                Node currentNode = head;
+                Node currentNode = _head;
                 Node PreviousNode = null;
                 while (currentNode != null)
                 {
-                    if (currentNode.element.Equals(element))
+                    if (currentNode._element.Equals(element))
                         break;
                     PreviousNode = currentNode;
-                    currentNode = currentNode.next;
+                    currentNode = currentNode._next;
                 }
                 if (currentNode != null)
                 {
-                    PreviousNode.next = currentNode.next;
+                    PreviousNode._next = currentNode._next;
                     N--;
                 }
             }
@@ -192,11 +192,11 @@ namespace Array
         public override string ToString()
         {
             var result = new StringBuilder();
-            Node currentNode = head;
+            Node currentNode = _head;
             while (currentNode != null)
             {
                 result.Append($"{currentNode} -> ");
-                currentNode = currentNode.next;
+                currentNode = currentNode._next;
             }
             result.Append("Null");
             return result.ToString();

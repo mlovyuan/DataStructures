@@ -4,38 +4,38 @@ namespace StackAndQueue.Queue
 {
     class ArrayGenericQueue<T>:IQueue<T>
     {
-        private ArrayGenericSample<T> arrayGeneric;
+        private ArrayGenericSample<T> _arrayGeneric;
 
         public ArrayGenericQueue(int Capacity)
         {
-            arrayGeneric = new ArrayGenericSample<T>(Capacity);
+            _arrayGeneric = new ArrayGenericSample<T>(Capacity);
         }
         
         public ArrayGenericQueue()
         {
-            arrayGeneric = new ArrayGenericSample<T>();
+            _arrayGeneric = new ArrayGenericSample<T>();
         }
 
-        public int Count => arrayGeneric.Count;
-        public bool IsEmpty => arrayGeneric.IsEmpty;
+        public int Count => _arrayGeneric.Count;
+        public bool IsEmpty => _arrayGeneric.IsEmpty;
         public void Enqueue(T element)
         {
-            arrayGeneric.AddLast(element);
+            _arrayGeneric.AddLast(element);
         }
 
         public T Dequeue()
         {
-            return arrayGeneric.RemoveFirst();
+            return _arrayGeneric.RemoveFirst();
         }
 
         public T Peek()
         {
-            return arrayGeneric.GetFirst();
+            return _arrayGeneric.GetFirst();
         }
 
         public override string ToString()
         {
-            return $"Queue: front {arrayGeneric} tail";
+            return $"Queue: front {_arrayGeneric} tail";
         }
     }
 }

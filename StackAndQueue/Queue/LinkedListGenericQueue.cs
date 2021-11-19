@@ -1,39 +1,38 @@
 ﻿using Array;
-using System;
 
 namespace StackAndQueue.Queue
 {
-    class LinkedListGenericQueue<T>:IQueue<T>
+    class LinkedListGenericQueue<T> : IQueue<T>
     {
-        private LinkedListSample<T> LinkedList;
+        private LinkedListSample<T> _linkedList;
 
         public LinkedListGenericQueue()
         {
-            LinkedList = new LinkedListSample<T>();
+            _linkedList = new LinkedListSample<T>();
         }
 
-        public int Count => LinkedList.Count;
+        public int Count => _linkedList.Count;
 
-        public bool IsEmpty => LinkedList.IsEmpty;
+        public bool IsEmpty => _linkedList.IsEmpty;
 
         public T Dequeue()
         {
-            return LinkedList.RemoveFirst();
+            return _linkedList.RemoveFirst();
         }
 
         public void Enqueue(T element)
         {
-            LinkedList.AddLast(element);
+            _linkedList.AddLast(element);
         }
 
         public T Peek()
         {
-            return LinkedList.GetFirst();
+            return _linkedList.GetFirst();
         }
 
         public override string ToString()
         {
-            return $"Queue front {LinkedList} tail";
+            return $"Queue front {_linkedList} tail";
         }
     }
 }

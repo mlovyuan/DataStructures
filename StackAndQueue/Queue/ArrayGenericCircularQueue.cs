@@ -4,40 +4,40 @@ namespace StackAndQueue.Queue
 {
     class ArrayGenericCircularQueue<T> : IQueue<T>
     {
-        private ArrayForCircularQueueGenericSample<T> arrayCircularQueueGeneric;
+        private ArrayForCircularQueueGenericSample<T> _arrayCircularQueueGeneric;
 
         public ArrayGenericCircularQueue(int Capacity)
         {
-            arrayCircularQueueGeneric = new ArrayForCircularQueueGenericSample<T>(Capacity);
+            _arrayCircularQueueGeneric = new ArrayForCircularQueueGenericSample<T>(Capacity);
         }
 
         public ArrayGenericCircularQueue()
         {
-            arrayCircularQueueGeneric = new ArrayForCircularQueueGenericSample<T>();
+            _arrayCircularQueueGeneric = new ArrayForCircularQueueGenericSample<T>();
         }
 
-        public int Count => arrayCircularQueueGeneric.Count;
+        public int Count => _arrayCircularQueueGeneric.Count;
 
-        public bool IsEmpty => arrayCircularQueueGeneric.IsEmpty;
+        public bool IsEmpty => _arrayCircularQueueGeneric.IsEmpty;
 
         public void Enqueue(T element)
         {
-            arrayCircularQueueGeneric.AddLast(element);
+            _arrayCircularQueueGeneric.AddLast(element);
         }
 
         public T Dequeue()
         {
-            return arrayCircularQueueGeneric.RemoveFirst();
+            return _arrayCircularQueueGeneric.RemoveFirst();
         }
 
         public T Peek()
         {
-            return arrayCircularQueueGeneric.GetFirst();
+            return _arrayCircularQueueGeneric.GetFirst();
         }
 
         public override string ToString()
         {
-            return $"Queue: front {arrayCircularQueueGeneric} tail";
+            return $"Queue: front {_arrayCircularQueueGeneric} tail";
         }
     }
 }
