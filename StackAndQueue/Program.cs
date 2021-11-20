@@ -40,14 +40,14 @@ namespace StackAndQueue
 
 
             long linkedListQueueTest = TestStack(new LinkedListGenericQueue<int>(), testTimes);
-            Console.WriteLine($"ArrayQueue's time: {linkedListQueueTest}ms");
+            Console.WriteLine($"linkedListQueue's time: {linkedListQueueTest}ms");
 
             long linkedListCircularQueueTest = TestStack(new LinkedListGenericCircularQueue<int>(), testTimes);
             Console.WriteLine($"LinkedListCircularQueueTest's time: {linkedListCircularQueueTest}ms");
             Console.ReadLine();
         }
 
-        public static long TestStack(IStack<int> stack, int runTimes)
+        private static long TestStack(IStack<int> stack, int runTimes)
         {
             Stopwatch stopwatch = Stopwatch.StartNew();
             for (int i = 0; i < runTimes; i++)
@@ -57,8 +57,8 @@ namespace StackAndQueue
             stopwatch.Stop();
             return stopwatch.ElapsedMilliseconds;
         }
-        
-        public static long TestStack(IQueue<int> queue, int runTimes)
+
+        private static long TestStack(IQueue<int> queue, int runTimes)
         {
             Stopwatch stopwatch = Stopwatch.StartNew();
             for (int i = 0; i < runTimes; i++)
