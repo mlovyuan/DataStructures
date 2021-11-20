@@ -12,21 +12,22 @@ namespace Set
             _linkedListSample = new LinkedListSample<T>();
         }
 
-        public int Count { get; }
-        public bool IsEmpty { get; }
+        public int Count => _linkedListSample.Count;
+        public bool IsEmpty => _linkedListSample.IsEmpty;
         public void Add(T element)
         {
-            throw new System.NotImplementedException();
+            if(!_linkedListSample.Contains(element))
+                _linkedListSample.AddFirst(element);
         }
 
         public void Remove(T element)
         {
-            throw new System.NotImplementedException();
+            _linkedListSample.Remove(element);
         }
 
         public bool Contaion(T element)
         {
-            throw new System.NotImplementedException();
+            return _linkedListSample.Contains(element);
         }
     }
 }
